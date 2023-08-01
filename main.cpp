@@ -13,15 +13,15 @@ public:
     int output(){
         return number;
     }
-    void set_number(int number){
+    Counter(int number){
         this -> number = number;
     }
 
 };
 int main() {
-    int number;
+    int number = 1;
     std::string input = "";
-    Counter counter;
+    Counter counter{number};
     std::cout << "Вы хотите указать начальное значение счётчика? ";
 
     while (input != "да" || input != "нет") {
@@ -30,7 +30,7 @@ int main() {
         if (input == "да") {
             std::cout << "Введите начальное значение счётчика: ";
             std::cin >> number;
-            counter.set_number(number);
+            Counter counter{number};
             break;
         }else if(input == "нет") break;
     }
@@ -52,6 +52,11 @@ int main() {
 
     }
 
+
+
+
+    return 0;
+}
 
 
 

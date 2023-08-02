@@ -1,6 +1,7 @@
 #include <iostream>
 
 class Counter{
+private:
     int number = 1;
 
 public:
@@ -17,11 +18,15 @@ public:
         this -> number = number;
     }
 
+    Counter() {
+
+    }
 };
+
 int main() {
     int number = 1;
     std::string input = "";
-    Counter counter{number};
+    Counter counter;
     std::cout << "Вы хотите указать начальное значение счётчика? ";
 
     while (input != "да" || input != "нет") {
@@ -30,7 +35,7 @@ int main() {
         if (input == "да") {
             std::cout << "Введите начальное значение счётчика: ";
             std::cin >> number;
-            Counter counter{number};
+            counter = Counter(number);
             break;
         }else if(input == "нет") break;
     }
@@ -52,11 +57,6 @@ int main() {
 
     }
 
-
-
-
-    return 0;
-}
 
 
 
